@@ -1,0 +1,42 @@
+{
+  "name": "zoomagents",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A Zoom-style room where your agents are the participants.",
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
+    "build": "vite build",
+    "start": "tsx server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node scripts/smoke.mjs",
+    "opencode-check": "node scripts/opencode-check.mjs",
+    "profiles-check": "node scripts/profiles-check.mjs",
+    "tools-check": "node scripts/tools-check.mjs",
+    "interrupt-check": "node scripts/interrupt-check.mjs",
+    "context-check": "tsx scripts/context-check.ts",
+    "addressing-check": "node scripts/addressing-check.mjs",
+    "usage-check": "tsx scripts/usage-check.ts",
+    "analyze-project": "tsx scripts/analyze-project.ts"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.2",
+    "@vitejs/plugin-react": "^6.3.0",
+    "concurrently": "^10.0.7",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}
